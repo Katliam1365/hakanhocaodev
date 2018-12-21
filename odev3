@@ -1,0 +1,11 @@
+toplam=0
+for i in range (1,1001):
+    toplam+=i**i
+
+yeni=str(toplam)[::-1]
+
+yeni=yeni[0:10]
+
+
+
+print(yeni[::-1])
