@@ -1,0 +1,52 @@
+from tkinter import *
+from tkinter import messagebox
+
+#İNTERNET ÜZERİNDEN YARDIM ALINMIŞTIR .
+romanalfabe = ['M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I']
+sayilar = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
+def veri():
+    def dec2roman(sayi):
+        if 1 <= sayi <= 3999:
+            romanhali = ("")
+            if type(sayi) == float:
+                integer, fractor = str(sayi).split('.')
+                integer = int(integer)
+                while len(fractor) > 3:
+                    fra = list(fractor)
+                    fra.pop()
+                    fractor = ("".join(fra))
+                fractor = int(fractor)
+                return dec2roman(integer) + ('.') + dec2roman(fractor)
+            for i, d in enumerate(sayilar):
+                while (sayi >= d):
+                    sayi -= d
+                    romanhali += romanalfabe[i]
+            return (romanhali)
+        else:
+            messagebox.showinfo("sonuç", "Romen rakamları aralığında sayı giriniz")
+
+    il=acilis.get()
+
+    try:
+        messagebox.showinfo("Çıkış", dec2roman(int(il)))
+    except ValueError:
+        messagebox.showinfo("Çıkış", "Girdiğiniz veri sayı olmalı.")
+
+ekran=Tk()
+ekran.title("Romen rakam dönüştürücü")
+ekran.geometry("400x300")
+ekran.config(background="red")
+yazi=Label(ekran)
+yazi.config(text="Dönüştürülecek sayıyı giriniz")
+yazi.pack()
+
+acilis=Entry(ekran)
+
+acilis.pack()
+
+buton=Button(ekran)
+buton.config(text="Okey!")
+buton.config(command=veri)
+buton.pack()
+
+ekran.mainloop()
