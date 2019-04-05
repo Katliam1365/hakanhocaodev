@@ -1,7 +1,8 @@
 from tkinter import *
-from tkinter import messagebox
+from tkinter import messageboxd
 
 #İNTERNET ÜZERİNDEN YARDIM ALINMIŞTIR .
+#YILMAZ KADANA AİT DİR
 romanalfabe = ['M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I']
 sayilar = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
 def veri():
